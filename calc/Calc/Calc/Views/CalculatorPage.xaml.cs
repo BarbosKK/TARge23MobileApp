@@ -1,10 +1,16 @@
-namespace Calc.Views;
+using Calc.ViewModels;
 
-public partial class CalculatorPage : ContentPage
+
+namespace Calc.Views
 {
-	public CalculatorPage()
-	{
-		InitializeComponent();
-	}
-}
+    public partial class CalculatorPage : ContentPage
+    {
+        public CalculatorPage()
+        {
+            InitializeComponent();
 
+            // Sidume lehe ViewModeliga
+            BindingContext = new CalculatorViewModel();
+        }
+    }
+}

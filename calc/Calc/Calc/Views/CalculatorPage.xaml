@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calc.ViewModels" 
              x:Class="Calc.Views.CalculatorPage"
              Title="CalculatorPage">
+   
+    <!-- Sidumise määramine -->
+    <ContentPage.BindingContext>
+        <local:CalculatorViewModel />
+    </ContentPage.BindingContext>
 
     <Grid 
         RowDefinitions="*,68,48,44,44,48,64,64,64,64"
@@ -234,7 +240,8 @@
             Margin="6,10,6,4"
             Style="{StaticResource ScientificOperatorButtonStyle}"
             Text=")"/>
-
+        
+        <!--Number Button-->
         <Button 
             Grid.Row="6"
             Grid.Column="0"
@@ -242,7 +249,9 @@
             Margin="0,0,0,0"
             Style="{StaticResource NumberButtonStyle}"
             BorderColor="White"
-            Text="7"/>
+            Text="7"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="7"/>
 
         <Button 
             Grid.Row="6"
@@ -251,7 +260,10 @@
             Margin="0,0,0,0"
             Style="{StaticResource NumberButtonStyle}"
             BorderColor="White"
-            Text="8"/>
+            Text="8"
+            Command="{Binding}"
+            CommandParameter="8"/>
+
 
         <Button 
             Grid.Row="6"
@@ -314,7 +326,7 @@
             Margin="0,0,0,0"
             Style="{StaticResource NumberButtonStyle}"
             BorderColor="White"
-            Text="1"/>
+            Text="3"/>
 
         <Button 
             Grid.Row="9"
@@ -343,6 +355,7 @@
             BorderColor="White"
             Text="&#x232B;"/>
 
+        <!--Operator Buttons-->
         <Button 
             Grid.Row="6"
             Grid.Column="3"
@@ -351,7 +364,9 @@
             Margin="0,0,0,0"
             Style="{StaticResource OperatorButtonStyle}"
             BorderColor="Black"
-            Text="AC"/>
+            Text="AC"
+            Command="{Binding}"
+            CommandParameter=""/>
 
         <Button 
             Grid.Row="7"
