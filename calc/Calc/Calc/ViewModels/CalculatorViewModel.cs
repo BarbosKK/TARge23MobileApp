@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
-using System.Data; // Kasutame tulemuse arvutamiseks DataTable
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.ComponentModel;
+using System.Data; 
 using System.Windows.Input;
 
 namespace Calc.ViewModels
@@ -94,4 +96,6 @@ namespace Calc.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+    
 }

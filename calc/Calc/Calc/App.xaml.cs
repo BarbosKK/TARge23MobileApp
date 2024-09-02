@@ -32,5 +32,9 @@ namespace Calc
 
             MainPage = new CalculatorPage();
         }
+
+        public static int WindowWidth1 => WindowWidth;
+
+        public static int WindowHeight1 => WindowHeight;
     }
 }
