@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using System;
 using System.ComponentModel;
-using System.Data; 
+using System.Data;
 using System.Windows.Input;
+//using Xamarin.Forms;
 
 namespace Calc.ViewModels
 {
@@ -37,11 +37,13 @@ namespace Calc.ViewModels
             }
         }
 
+        // Defineerime erinevad käsud
         public ICommand ResetCommand { get; }
         public ICommand NumberInputCommand { get; }
         public ICommand MathOperatorCommand { get; }
         public ICommand CalculateCommand { get; }
         public ICommand BackspaceCommand { get; }
+        public ICommand ScientificOperatorCommand { get; } // Ühtne käsk teaduslike operatsioonide jaoks
 
         public CalculatorViewModel()
         {
@@ -50,6 +52,7 @@ namespace Calc.ViewModels
             MathOperatorCommand = new Command<string>(OnMathOperator);
             CalculateCommand = new Command(OnCalculate);
             BackspaceCommand = new Command(OnBackspace);
+            ScientificOperatorCommand = new Command<string>(OnScientificOperator); // Kasutame ühtset meetodit
         }
 
         private void OnReset()
@@ -89,6 +92,58 @@ namespace Calc.ViewModels
             }
         }
 
+        private void OnScientificOperator(string operation)
+        {
+            try
+            {
+                double number;
+                if (double.TryParse(InputText, out number))
+                {
+                    double result = operation switch
+                    {
+                        "sin" => Math.Sin(number),
+                        "cos" => Math.Cos(number),
+                        "tan" => Math.Tan(number),
+                        "asin" => Math.Asin(number),
+                        "acos" => Math.Acos(number),
+                        "atan" => Math.Atan(number),
+                        "log" => Math.Log(number),
+                        "log10" => Math.Log10(number),
+                        "exp" => Math.Exp(number),
+                        "sqrt" => Math.Sqrt(number),
+                        "abs" => Math.Abs(number),
+                        "fact" => Factorial(number), // Lisa oma funktsioon faktoriaali jaoks
+                       
+                        // Teised funktsioonid...
+                        _ => throw new NotSupportedException($"Operation {operation} not supported.")
+                    };
+
+                    CalculateResult = result.ToString();
+                }
+                else
+                {
+                    CalculateResult = "Invalid Input";
+                }
+            }
+            catch (Exception ex)
+            {
+                CalculateResult = "Error: " + ex.Message;
+            }
+        }
+
+        private double Factorial(double n)
+        {
+            if (n < 0) return double.NaN; // Faktoriaal pole negatiivsete arvude jaoks defineeritud
+            if (n == 0) return 1;
+
+            double result = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -96,6 +151,4 @@ namespace Calc.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
-    
 }
