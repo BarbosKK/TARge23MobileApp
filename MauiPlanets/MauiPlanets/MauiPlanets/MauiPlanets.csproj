@@ -60,12 +60,37 @@
 	  <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+	  <None Remove="Resources\Images\earth.svg" />
+	  <None Remove="Resources\Images\imgback.png" />
+	  <None Remove="Resources\Images\imgexplore.png" />
+	  <None Remove="Resources\Images\imgfavorite.png" />
+	  <None Remove="Resources\Images\imgmenu.png" />
+	  <None Remove="Resources\Images\imgsearch.png" />
+	  <None Remove="Resources\Images\jupiter.svg" />
+	  <None Remove="Resources\Images\mars.svg" />
+	  <None Remove="Resources\Images\mercury.svg" />
+	  <None Remove="Resources\Images\neptune.svg" />
+	  <None Remove="Resources\Images\saturn.svg" />
+	  <None Remove="Resources\Images\uranus.svg" />
+	  <None Remove="Resources\Images\venus.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Startpage.xaml.cs">
+	    <DependentUpon>Startpage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Startpage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
