@@ -82,13 +82,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\Startpage.xaml.cs">
-	    <DependentUpon>Startpage.xaml</DependentUpon>
+	  <Compile Update="Views\PlanetsPage.xaml.cs">
+	    <DependentUpon>PlanetsPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Startpage.xaml">
+	  <MauiXaml Update="Views\PlanetsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
