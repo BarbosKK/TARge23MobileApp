@@ -42,6 +42,12 @@ namespace MauiCRUD.Data
             return await Execute<TTable, TTable>(async () => await Database.GetAsync<TTable>(primaryKey));
         }
 
+        private Task<TTable2> Execute<TTable1, TTable2>(Func<Task<TTable2>> value)
+            where TTable1 : class, new()
+            where TTable2 : class, new()
+        {
+        }
+
         public async Task<bool> AddItemAsync<TTable>(TTable item) where TTable : class, new()
         {
             await CreateTableIfNotExists<TTable>();
@@ -59,5 +65,12 @@ namespace MauiCRUD.Data
         }
 
         public async ValueTask DisposeAsync() => await _connection.CloseAsync();
+
+        public async Task<IEnumerable<TTAble>> GetFilteredAsync<TTAble>(Expression<Func<TTable, bool>> predicate) where TTAble : class, new()
+        {
+            var table = await GetTableAsync<TTAble>();
+            return await table.Where(predicate).ToListAsync();
+        }
+                
     }
 }
