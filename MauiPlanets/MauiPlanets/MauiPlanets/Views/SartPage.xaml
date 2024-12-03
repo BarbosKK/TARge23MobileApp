@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiPlanets.Views.StartPage"
@@ -61,7 +60,7 @@
         <Image 
             x:Name="imgMercury"
             Opacity="0"
-            Source="mercury.svg"
+            Source="mercury.png"
             VerticalOptions="Start"
             HorizontalOptions="Center"
             TranslationX="18"
@@ -72,7 +71,7 @@
         <Image 
             x:Name="imgVenus"
             Opacity="0"
-            Source="venus.svg"
+            Source="venus.png"
             VerticalOptions="Start"
             HorizontalOptions="Center"
             TranslationX="84"
@@ -95,6 +94,61 @@
             x:Name="imgNeptune"
             Opacity="0"
             Source="neptune.png"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="100"
+            TranslationY="-72"
+            WidthRequest="200"
+            HeightRequest="200"/>
+
+        <Image 
+            x:Name="imgPluto"
+            Opacity="0"
+            Source="pluto.png"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="100"
+            TranslationY="-72"
+            WidthRequest="200"
+            HeightRequest="200"/>
+
+        <Image 
+            x:Name="imgCeres"
+            Opacity="0"
+            Source="ceres.webp"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="100"
+            TranslationY="-72"
+            WidthRequest="200"
+            HeightRequest="200"/>
+
+        <Image 
+            x:Name="imgHaumea"
+            Opacity="0"
+            Source="haumea.webp"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="100"
+            TranslationY="-72"
+            WidthRequest="200"
+            HeightRequest="200"/>
+
+        <Image 
+            x:Name="imgMakemake"
+            Opacity="0"
+            Source="makemake.webp"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="100"
+            TranslationY="-72"
+            WidthRequest="200"
+            HeightRequest="200"/>
+
+        <Image 
+            x:Name="imgEris"
+            Opacity="0"
+            Source="eris.webp"
             VerticalOptions="Start"
             HorizontalOptions="End"
             TranslationX="100"

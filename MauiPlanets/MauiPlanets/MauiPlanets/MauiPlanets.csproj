@@ -60,16 +60,22 @@
 	  <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+	  <None Remove="Resources\Images\apipic.png" />
+	  <None Remove="Resources\Images\ceres.png" />
 	  <None Remove="Resources\Images\earth.svg" />
+	  <None Remove="Resources\Images\haumea.png" />
 	  <None Remove="Resources\Images\imgback.png" />
 	  <None Remove="Resources\Images\imgexplore.png" />
 	  <None Remove="Resources\Images\imgfavorite.png" />
 	  <None Remove="Resources\Images\imgmenu.png" />
+	  <None Remove="Resources\Images\imgprofile.png" />
 	  <None Remove="Resources\Images\imgsearch.png" />
 	  <None Remove="Resources\Images\jupiter.svg" />
+	  <None Remove="Resources\Images\makemake.png" />
 	  <None Remove="Resources\Images\mars.svg" />
 	  <None Remove="Resources\Images\mercury.svg" />
 	  <None Remove="Resources\Images\neptune.svg" />
+	  <None Remove="Resources\Images\pluto.png" />
 	  <None Remove="Resources\Images\saturn.svg" />
 	  <None Remove="Resources\Images\uranus.svg" />
 	  <None Remove="Resources\Images\venus.svg" />
@@ -82,12 +88,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\PlanetsDetailsPage.xaml.cs">
+	    <DependentUpon>PlanetsDetailsPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\PlanetsPage.xaml.cs">
 	    <DependentUpon>PlanetsPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\PlanetsDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PlanetsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
