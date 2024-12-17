@@ -1,4 +1,5 @@
-﻿namespace MauiPlanets.Models
+﻿﻿using System;
+namespace MauiPlanets.Models
 {
     public class Planet
     {
@@ -25,6 +26,7 @@
 
                 return bgBrush;
             }
+
         }
     }
 }

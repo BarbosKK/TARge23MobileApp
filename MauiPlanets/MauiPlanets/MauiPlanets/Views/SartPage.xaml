@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiPlanets.Views.StartPage"
-             Title="Solar Planets">
+             Title="Päikesesüsteemi planeedid">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#666" Offset="0.0" />
-            <GradientStop Color="#000" Offset="1.0" />
+            <GradientStop Color="#ffb" Offset="0.0" />
+            <GradientStop Color="#fff" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -94,61 +94,6 @@
             x:Name="imgNeptune"
             Opacity="0"
             Source="neptune.png"
-            VerticalOptions="Start"
-            HorizontalOptions="End"
-            TranslationX="100"
-            TranslationY="-72"
-            WidthRequest="200"
-            HeightRequest="200"/>
-
-        <Image 
-            x:Name="imgPluto"
-            Opacity="0"
-            Source="pluto.png"
-            VerticalOptions="Start"
-            HorizontalOptions="End"
-            TranslationX="100"
-            TranslationY="-72"
-            WidthRequest="200"
-            HeightRequest="200"/>
-
-        <Image 
-            x:Name="imgCeres"
-            Opacity="0"
-            Source="ceres.webp"
-            VerticalOptions="Start"
-            HorizontalOptions="End"
-            TranslationX="100"
-            TranslationY="-72"
-            WidthRequest="200"
-            HeightRequest="200"/>
-
-        <Image 
-            x:Name="imgHaumea"
-            Opacity="0"
-            Source="haumea.webp"
-            VerticalOptions="Start"
-            HorizontalOptions="End"
-            TranslationX="100"
-            TranslationY="-72"
-            WidthRequest="200"
-            HeightRequest="200"/>
-
-        <Image 
-            x:Name="imgMakemake"
-            Opacity="0"
-            Source="makemake.webp"
-            VerticalOptions="Start"
-            HorizontalOptions="End"
-            TranslationX="100"
-            TranslationY="-72"
-            WidthRequest="200"
-            HeightRequest="200"/>
-
-        <Image 
-            x:Name="imgEris"
-            Opacity="0"
-            Source="eris.webp"
             VerticalOptions="Start"
             HorizontalOptions="End"
             TranslationX="100"
